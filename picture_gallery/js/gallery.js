@@ -14,10 +14,10 @@ function unDo(){
    //displaying orginal text
    image_div.textContent="Hover over an image below to display here.";
 }  
-function set_tabIndex(){
-   var image = document.querySelectorAll('flex');
-   for(var i=0;i<ImageTrackList.length;i++){
-      image[i].setAttribute('tabindex', i +1);
-   }
-document.addEventListener('DOMContent Loaded' ,set_tabIndex);
-}
+document.addEventListener('DOMContentLoaded', function() {
+   const images = document.querySelectorAll('#gallery img');
+   images.forEach((img, index) => {
+     img.tabIndex = index + 1;
+   });
+ });
+ 
